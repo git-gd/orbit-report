@@ -23,8 +23,8 @@ export class AppComponent {
           // TODO: loop over satellites
           this.sourceList = fetchedSatellites.map(obj => {
             
+            // TODO: create a Satellite object using new Satellite(fetchedSatellites[i].name, fetchedSatellites[i].type, fetchedSatellites[i].launchDate, fetchedSatellites[i].orbitType, fetchedSatellites[i].operational);
             let satObj = new Satellite(
-          // TODO: create a Satellite object using new Satellite(fetchedSatellites[i].name, fetchedSatellites[i].type, fetchedSatellites[i].launchDate, fetchedSatellites[i].orbitType, fetchedSatellites[i].operational);
               obj.name,
               obj.type,
               obj.launchDate,
