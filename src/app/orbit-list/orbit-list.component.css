@@ -21,6 +21,15 @@ table {
     color: #fff
 }
 
+/* Bonus A) Zebra Stripes */
+.table-row:nth-child(even) {
+    background-color: #e2e2e2;
+}
+
+.table-row:nth-child(odd) {
+    background-color: #c2cccc;
+}
+
 th, td {
     text-align: left;
     margin: 5px 10px;
