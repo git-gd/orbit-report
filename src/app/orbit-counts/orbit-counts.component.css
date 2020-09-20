@@ -12,3 +12,8 @@
 .counts span {
     float: right;
 }
+
+.showzero {
+    padding-top: 10px;
+    font-weight: bold;
+}
