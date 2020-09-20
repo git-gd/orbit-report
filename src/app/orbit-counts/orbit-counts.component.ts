@@ -8,6 +8,8 @@ import { Satellite } from '../satellite';
 })
 export class OrbitCountsComponent implements OnInit {
   
+  staticSet = new Set();
+
   constructor() {
   }
 
@@ -16,7 +18,12 @@ export class OrbitCountsComponent implements OnInit {
   ngOnInit() {
   }
 
-  getTypes() {
+  ngOnChanges() {
+    if (this.staticSet.size < 1 && this.satellites) {this.satellites.forEach(sat => this.staticSet.add(sat.type));}
+  }
+
+  getTypes(showZero: boolean) {
+    if (showZero) {return this.staticSet}
     let typeSet = new Set();
     this.satellites.forEach(sat => typeSet.add(sat.type));
     return typeSet;
