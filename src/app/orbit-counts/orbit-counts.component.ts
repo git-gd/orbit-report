@@ -7,12 +7,18 @@ import { Satellite } from '../satellite';
   styleUrls: ['./orbit-counts.component.css']
 })
 export class OrbitCountsComponent implements OnInit {
-
+    
   constructor() { }
 
   @Input() satellites: Satellite[];
-  
+
   ngOnInit() {
+  }
+
+  getTypes() {
+    let typeSet = new Set();
+    this.satellites.forEach(sat => typeSet.add(sat.type));
+    return typeSet;
   }
 
   typeCount(type): number {

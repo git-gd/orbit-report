@@ -1,10 +1,13 @@
 <h3>Satellite Counts:</h3>
 <div class="counts" *ngIf="satellites"> <!-- wait for async to avoid errors -->
    <div>Total: <span>{{satellites.length}}</span></div>
+   <div *ngFor="let type of getTypes()">{{type}}: <span>{{this.typeCount(type)}}</span></div>
+<!-- removed for Bonus Mission C
    <div>Space Debris: <span>{{this.typeCount('Space Debris')}}</span></div>
    <div>Communication: <span>{{this.typeCount('Communication')}}</span></div>
    <div>Probe: <span>{{this.typeCount('Probe')}}</span></div>
    <div>Positioning: <span>{{this.typeCount('Positioning')}}</span></div>
    <div>Space Station: <span>{{this.typeCount('Space Station')}}</span></div>
    <div>Telescope: <span>{{this.typeCount('Telescope')}}</span></div>
+-->
 </div>
