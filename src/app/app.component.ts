@@ -45,15 +45,14 @@ export class AppComponent {
     searchTerm = searchTerm.toLowerCase();
     for (let i = 0; i < this.sourceList.length; i++) {
       // adjusted for Bonus Mission C search using orbitType and type properties
-      let name:string = '';
-      if (nameCheckbox) {name += this.sourceList[i].name.toLowerCase();}
-      if (typeCheckbox) {name += this.sourceList[i].type.toLowerCase();}
-      if (orbitCheckbox) {name += this.sourceList[i].orbitType.toLowerCase();}
-      if (name.indexOf(searchTerm) >= 0) {
-        matchingSatellites.push(this.sourceList[i]);
-      }
+      let searchMatch: boolean = false;
+      if (nameCheckbox) {searchMatch = this.sourceList[i].name.toLowerCase().indexOf(searchTerm.toLowerCase()) >= 0};
+      if (typeCheckbox) {searchMatch = searchMatch || (this.sourceList[i].type.toLowerCase().indexOf(searchTerm.toLowerCase()) >= 0)};
+      if (orbitCheckbox) {searchMatch = searchMatch || (this.sourceList[i].orbitType.toLowerCase().indexOf(searchTerm.toLowerCase()) >= 0)};
+      if (searchMatch) {matchingSatellites.push(this.sourceList[i])};
     }
-    this.displayList = matchingSatellites;
+    if (searchTerm.length > 0) {this.displayList = matchingSatellites}
+    else {this.displayList = this.sourceList};
   }
 
 }
