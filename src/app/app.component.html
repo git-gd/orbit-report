@@ -1,3 +1,10 @@
 <app-orbit-list [satellites]="displayList"></app-orbit-list>
-<div class="search-form"><input #searchTerm type='text' (keyup.enter)="search(searchTerm.value, nameCheckbox.checked, typeCheckbox.checked, orbitCheckbox.checked)"><button (click)="search(searchTerm.value, nameCheckbox.checked, typeCheckbox.checked, orbitCheckbox.checked)">Search</button><label> Search Columns:</label><input type="checkbox" checked #nameCheckbox>Name <input type="checkbox" #typeCheckbox>Type <input type="checkbox" #orbitCheckbox>Orbit Type</div>
+<div class="search-form">
+    <input #searchTerm type='text' (keyup.enter)="search(searchTerm.value, nameCheckbox.checked, typeCheckbox.checked, orbitCheckbox.checked)">
+    <button (click)="search(searchTerm.value, nameCheckbox.checked, typeCheckbox.checked, orbitCheckbox.checked)">Search</button>
+    <span id='bold'>Search Columns:</span>
+    <input type="checkbox" id='nameBox' checked #nameCheckbox><label for='nameBox'>Name</label>
+    <input type="checkbox" id='typeBox' #typeCheckbox><label for='typeBox'>Type</label>
+    <input type="checkbox" id='orbitBox' #orbitCheckbox><label for='orbitBox'>Orbit Type</label>
+</div>
 <app-orbit-counts [satellites]="displayList"></app-orbit-counts>

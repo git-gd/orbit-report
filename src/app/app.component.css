@@ -12,6 +12,16 @@ button {
     cursor: pointer;
 }
 
-label {
+#bold {
+    padding: 8px;
     font-weight: bold;
+}
+
+label {
+    padding-right: 8px;
+}
+
+input:checked + label {
+    color: green;
+    text-shadow: 0px 0px 8px lightgreen;
 }
